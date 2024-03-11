@@ -2,23 +2,33 @@
   mix-blend-mode: hard-light;
 }
 
-$green: rgb(0, 225, 0);
-$green-lt: rgb(79, 190, 79);
-$red: red;
-$red-lt: rgb(251, 130, 130);
-$purple: purple;
-$purple-lt: rgb(180, 86, 180);
-$blue: rgb(0, 0, 162);
-$blue-lt: rgb(43, 43, 209);
-$yellow: rgb(255, 255, 0);
-$yellow-lt: rgb(255, 255, 161);
+// $white: rgb(234, 234, 234);
+// $white-lt: rgb(205, 206, 255);
+// $red: rgb(176, 51, 51);
+// $red-lt: rgb(251, 130, 130);
+// $purple: rgb(101, 28, 101);
+// $purple-lt: rgb(180, 86, 180);
+// $blue: rgb(0, 0, 162);
+// $blue-lt: rgb(91, 91, 179);
+// $yellow: rgb(255, 255, 0);
+// $yellow-lt: rgb(255, 255, 161);
 
-$bubble-size: 10rem;
+
+$blue: rgb(18, 113, 255);
+$purple-lt: rgb(221, 74, 255);
+$blue-lt: rgb(100, 220, 255);
+$red: rgb(200, 50, 50);
+$yellow: rgb(180, 180, 50);
+
+$bubble-size: 100%;
+
+$container-height: 30rem;
+$container-width: 30rem;
 
 .container {
-  width: 100%;
+  width: $container-width;
+  height: $container-height;
   border: solid 1px black;
-  height: 60rem;
   border-radius: 1rem;
   background-image: linear-gradient(45deg, lightblue, blue);
   background-size: 400%;
@@ -31,18 +41,20 @@ $bubble-size: 10rem;
   position: absolute;
   background: radial-gradient(
       circle at center,
-      rgba($green, 0.8) 0,
-      rgba($green-lt, 0) 50%
+      rgba($blue, 0.8),
+      rgba($blue, 0) 50%
     )
     no-repeat;
   @include blend-hard();
 
   height: $bubble-size;
   width: $bubble-size;
-  top: calc((50% - $bubble-size) / 2);
-  left: calc((50% - $bubble-size) / 2);
-
+  top: calc($container-height * -.2);
+  left: calc((100% - $bubble-size) / 2 + calc($container-width * .1));
   
+  transform-origin: calc(50% + calc($container-height * .2));
+  animation: moveInCircle 20s linear infinite;
+
   opacity: 1;
 }
 
@@ -50,16 +62,19 @@ $bubble-size: 10rem;
   position: absolute;
   background: radial-gradient(
       circle at center,
-      rgba($red, 0.8) 0,
-      rgba($red-lt, 0) 50%
+      rgba($purple-lt, 0.8) 0,
+      rgba($purple-lt, 0) 50%
     )
     no-repeat;
   @include blend-hard();
 
   height: $bubble-size;
   width: $bubble-size;
-  top: calc((30% - $bubble-size) / 2);
-  left: calc((30% - $bubble-size) / 2);
+  top: 0;
+  left: -25%;
+
+  transform-origin: calc(50% + calc($container-height * .2));
+  animation: moveInCircle 20s linear infinite;
 
   opacity: 1;
 }
@@ -68,16 +83,19 @@ $bubble-size: 10rem;
   position: absolute;
   background: radial-gradient(
       circle at center,
-      rgba($purple, 0.8) 0,
-      rgba($purple-lt, 0) 50%
+      rgba($blue-lt, 0.8) 0,
+      rgba($blue-lt, 0) 50%
     )
     no-repeat;
   @include blend-hard();
 
   height: $bubble-size;
   width: $bubble-size;
-  top: calc((70% - $bubble-size) / 2);
-  left: calc((70% - $bubble-size) / 2);
+  top: calc((50% - $bubble-size) / 2 - calc($container-height * .4));
+  left: calc((50% - $bubble-size) / 2);
+
+  transform-origin: calc(50% - calc($container-height * .1));
+  animation: moveHorizontal 40s linear infinite;
 
   opacity: 1;
 }
@@ -86,16 +104,19 @@ $bubble-size: 10rem;
   position: absolute;
   background: radial-gradient(
       circle at center,
-      rgba($blue, 0.8) 0,
-      rgba($blue-lt, 0) 50%
+      rgba($red, 0.8) 0,
+      rgba($red, 0) 50%
     )
     no-repeat;
   @include blend-hard();
 
   height: $bubble-size;
   width: $bubble-size;
-  top: calc((90% - $bubble-size) / 2);
-  left: calc((90% - $bubble-size) / 2);
+  top: calc((50% - $bubble-size) / 2 - calc($container-height * .1));
+  left: calc((50% - $bubble-size) / 2);
+
+  transform-origin: calc(50% + calc($container-height * .2));
+  animation: moveVertical 20s ease infinite;
 
   opacity: 1;
 }
@@ -105,22 +126,25 @@ $bubble-size: 10rem;
   background: radial-gradient(
       circle at center,
       rgba($yellow, 0.8) 0,
-      rgba($yellow-lt, 0) 50%
+      rgba($yellow, 0) 50%
     )
     no-repeat;
   @include blend-hard();
 
   height: $bubble-size;
   width: $bubble-size;
-  top: calc((120% - $bubble-size) / 2);
-  left: calc((120% - $bubble-size) / 2);
+  top: calc((50% - $bubble-size) / 2 + calc($container-height * .4));
+  left: calc((50% - $bubble-size) / 2 - calc($container-width * .4));
+
+  transform-origin: calc(50% - 100px);
+  animation: moveInCircle 20s reverse infinite;
 
   opacity: 1;
 }
 
 @keyframes moveInCircle {
   0% {
-    transform: rotage(0deg);
+    transform: rotate(0deg);
   }
   50% {
     transform: rotate(180deg);
@@ -132,13 +156,13 @@ $bubble-size: 10rem;
 
 @keyframes moveVertical {
   0% {
-    transform: translateY(-50%);
+    transform: translateY(-10%);
   }
   50% {
     transform: translateY(50%);
   }
   100% {
-    transform: translateY(-50%);
+    transform: translateY(-10%);
   }
 }
 
