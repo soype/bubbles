@@ -35,6 +35,14 @@ $container-width: 60rem;
   background-position: center;
   position: relative;
   overflow: hidden;
+
+  display: flex;
+  justify-content: center;
+
+  h2{
+    color: white;
+    padding: 2rem;
+  }
 }
 
 .b1 {
