@@ -2,17 +2,6 @@
   mix-blend-mode: hard-light;
 }
 
-// $white: rgb(234, 234, 234);
-// $white-lt: rgb(205, 206, 255);
-// $red: rgb(176, 51, 51);
-// $red-lt: rgb(251, 130, 130);
-// $purple: rgb(101, 28, 101);
-// $purple-lt: rgb(180, 86, 180);
-// $blue: rgb(0, 0, 162);
-// $blue-lt: rgb(91, 91, 179);
-// $yellow: rgb(255, 255, 0);
-// $yellow-lt: rgb(255, 255, 161);
-
 
 $blue: rgb(18, 113, 255);
 $purple-lt: rgb(221, 74, 255);
@@ -38,14 +27,6 @@ $container-width: 100%;
     color: white;
     z-index: 99;
   }
-
-  svg{
-    width: 100%;
-    height: 100%;
-
-    filter: url(#goo) blur(40px);
-  }
-
 }
 
 .bubble-container {
@@ -58,7 +39,7 @@ $container-width: 100%;
   overflow: hidden;
   transform: scale(1.1);
 
-  filter: blur(10px);
+  filter: blur(20px);
 
   display: flex;
   justify-content: center;
@@ -140,7 +121,7 @@ $container-width: 100%;
   background: radial-gradient(
       circle at center,
       rgba($red, 0.8) 0,
-      rgba($red, 0) 30%
+      rgba($red, 0) 40%
     )
     no-repeat;
   @include blend-hard();
@@ -151,7 +132,7 @@ $container-width: 100%;
   left: calc( calc($container-width / 2) - calc($bubble-size * .5));
 
   transform-origin: center center;
-  animation: moveInCircleMd 7s linear infinite;
+  animation: moveInCircleSm 15s linear infinite;
 
   opacity: 1;
 }
@@ -168,11 +149,32 @@ $container-width: 100%;
 
   height: $bubble-size;
   width: $bubble-size;
-  top: 0;
+  bottom: 0;
   left: calc( calc($container-width / 2) - calc($bubble-size * .8));
 
   transform-origin: center center;
-  animation: moveInCircleMd 7s reverse linear infinite;
+  animation: moveInCircleLg 7s reverse linear infinite;
+
+  opacity: 1;
+}
+
+.b6{
+  position: absolute;
+  background: radial-gradient(
+      circle at center,
+      rgba($blue-lt, 0.8) 0,
+      rgba($blue-lt, 0) 40%
+    )
+    no-repeat;
+  @include blend-hard();
+
+  height: $bubble-size;
+  width: $bubble-size;
+  bottom: 0;
+  right: calc( calc($container-width / 2) - calc($bubble-size * .8));
+
+  transform-origin: center center;
+  animation: moveInCircleMd 7s linear infinite;
 
   opacity: 1;
 }
@@ -248,6 +250,6 @@ $container-width: 100%;
 }
 
 @keyframes moveInCircleLg {
-  from {  -webkit-transform: rotate(0deg) translateX(70px) rotate(0deg); }
-  to   {  -webkit-transform: rotate(360deg) translateX(70px) rotate(-360deg); }
+  from {  -webkit-transform: rotate(0deg) translateX(80px) rotate(0deg); }
+  to   {  -webkit-transform: rotate(360deg) translateX(80px) rotate(-360deg); }
 }

@@ -42,6 +42,7 @@ const Bubbles = ({ color }) => {
         <div className={styles.b3} id="blue-lt"></div>
         <div className={styles.b4} id="red"></div>
         <div className={styles.b5} id="yellow"></div>
+        <div className={styles.b6} id="lightblue"></div>
         <div
           className={styles.interactive}
           id="interactive"
