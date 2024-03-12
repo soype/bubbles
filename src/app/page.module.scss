@@ -1,9 +1,26 @@
 .main {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
-  padding: 6rem;
-  min-height: 100vh;
+  height: 100vh - 5vh;
 }
 
+.color-selector{
+  position: fixed;
+  bottom: 0;
+  height: 4rem;
+  width: 100%;
+  background-color: rgb(20, 20, 48);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  select{
+    height: 2rem;
+    border: none;
+    border-radius: 1rem;
+    text-align: center;
+    background-color: gray;
+    color: white;
+  }
+}
