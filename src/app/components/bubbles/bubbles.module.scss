@@ -37,7 +37,7 @@ $container-width: 100%;
   background-position: center;
   position: relative;
   overflow: hidden;
-  transform: scale(1.1);
+  transform: scale(1.2);
 
   filter: blur(20px);
 
@@ -134,7 +134,7 @@ $container-width: 100%;
   transform-origin: center center;
   animation: moveInCircleSm 15s linear infinite;
 
-  opacity: 1;
+  opacity: .7;
 }
 
 .b5 {
@@ -197,7 +197,7 @@ $container-width: 100%;
   transform-origin: center center;
   transition: transform .1s;
 
-  opacity: 1;
+  opacity: .7;
 }
 
 
