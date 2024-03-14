@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import styles from "./bubbles.module.scss";
 
-const Bubbles = ({ color }) => {
+const Bubbles = ({ calendarOff }) => {
   const [currentPosition, setCurrentPosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
@@ -22,8 +22,12 @@ const Bubbles = ({ color }) => {
     };
   }, []);
 
+  const calendarOffHandler = () => {
+    calendarOff(false);
+  }
+
   return (
-    <div className={styles.container}>
+    <div className={styles.container} onClick={calendarOffHandler}>
       <h2>Let's schedule a call</h2>
       <div className={styles["bubble-container"]} id="bubbleContainer">
 

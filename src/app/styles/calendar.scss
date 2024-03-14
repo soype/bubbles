@@ -65,7 +65,7 @@ $blue-lt: rgb(100, 220, 255);
     }
 
     &__days{
-        display: grid;
+        display: grid !important;
         grid-template-columns: repeat(7, 1fr);
         gap: 1rem;
         width: 30rem;
@@ -80,6 +80,17 @@ $blue-lt: rgb(100, 220, 255);
                 background-color: $blue;
             }
         }
+    }
+  }
+  &__tile{
+    &--active{
+      background-color: $blue;
+      color: white;
+      transition: all .2s;
+      &:hover{
+        background-color: $blue;
+        color: yellow;
+      }
     }
   }
 }

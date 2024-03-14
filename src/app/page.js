@@ -9,11 +9,18 @@ import DatePicker from "./components/DatePicker";
 
 export default function Home() {
 
+  const [calendarOn, setCalendarOn] = useState(false);
+
+  const calendarOffHandler = () => {
+    setCalendarOn(false);
+    console.log(calendarOn)
+  }
+
   return (
     <main className={styles.main}>
-      <Bubbles></Bubbles>
+      <Bubbles calendarOff={calendarOffHandler}></Bubbles>
       <div className={styles['content']}>
-        <DatePicker />
+        <DatePicker toggled={calendarOn} />
       </div>
       <div className={styles['color-selector']}>
       </div>
