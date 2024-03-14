@@ -24,7 +24,7 @@ const Bubbles = ({ color }) => {
 
   return (
     <div className={styles.container}>
-      <h2>Bubble Bubble</h2>
+      <h2>Let's schedule a call</h2>
       <div className={styles["bubble-container"]} id="bubbleContainer">
 
       <svg xmlns="http://www.w3.org/2000/svg">

@@ -1,0 +1,13 @@
+.calendar{
+    background-color: white;
+    padding: 1rem;
+    border-radius: 1rem;
+    border: none;
+
+}
+
+.react-calendar{
+    &__navigation{
+        display: flex;
+    }
+}
