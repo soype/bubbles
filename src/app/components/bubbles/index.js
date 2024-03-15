@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import styles from "./bubbles.module.scss";
 
-const Bubbles = ({ calendarOff }) => {
+const Bubbles = ({ toggleOff }) => {
   const [currentPosition, setCurrentPosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
@@ -23,7 +23,7 @@ const Bubbles = ({ calendarOff }) => {
   }, []);
 
   const calendarOffHandler = () => {
-    calendarOff(false);
+    toggleOff(false);
   }
 
   return (

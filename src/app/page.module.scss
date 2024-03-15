@@ -2,13 +2,16 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100vh - 5vh;
+  height: 100vh;
+  width: 100%;
 }
 
 .content{
   position: absolute;
   top: 50%;
   margin: auto;
+  transform-origin: center center;
+  width: 100%;
 }
 
 .color-selector{

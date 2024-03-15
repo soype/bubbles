@@ -1,0 +1,18 @@
+@import "../../styles/variables.scss";
+
+.menu {
+  max-width: $max-width;
+  height: 7rem;
+  width: 100%;
+  margin: auto;
+
+  &__container{
+    display: flex;
+    align-self: center;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    border-radius: 1rem;
+    background-color: white;
+  }
+}

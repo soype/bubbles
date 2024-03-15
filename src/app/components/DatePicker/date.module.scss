@@ -6,8 +6,12 @@
 
 }
 
-.react-calendar{
-    &__navigation{
-        display: flex;
-    }
+.container{
+    transition: all .5s;
+    max-height: 0;
+    overflow: hidden;
+}
+
+.display{
+    max-height: 300rem;
 }

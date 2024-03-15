@@ -1,29 +1,27 @@
-'use client'
+"use client";
 
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 import styles from "./page.module.scss";
 
 import Bubbles from "./components/bubbles";
-import DatePicker from "./components/DatePicker";
+import Menu from "./components/Menu";
 
 export default function Home() {
+  const [toggleOff, setToggleOff] = useState(false);
 
-  const [calendarOn, setCalendarOn] = useState(false);
-
-  const calendarOffHandler = () => {
-    setCalendarOn(false);
-    console.log(calendarOn)
-  }
+  const toggleOffHandler = () => {
+    setToggleOff(false);
+    console.log(toggleOff)
+  };
 
   return (
     <main className={styles.main}>
-      <Bubbles calendarOff={calendarOffHandler}></Bubbles>
-      <div className={styles['content']}>
-        <DatePicker toggled={calendarOn} />
+      <Bubbles toggleOff={toggleOffHandler}></Bubbles>
+      <div className={styles["content"]}>
+        <Menu toggled={toggleOff} />
       </div>
-      <div className={styles['color-selector']}>
-      </div>
+      {/* <div className={styles["color-selector"]}></div> */}
     </main>
   );
 }
