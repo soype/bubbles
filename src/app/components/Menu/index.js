@@ -1,26 +1,15 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 
 import DatePicker from "../DatePicker";
 
 import styles from "./menu.module.scss";
 
-const Menu = ({ toggleOff, changeToggle }) => {
-  const [toggleDate, setToggleDate] = useState(toggleOff);
+const Menu = ({ isToggled, changeToggle, disengageToggle }) => {
+
   const [date, setDate] = useState();
-
-  const contactSubmitHandler = (e) => {
-    e.preventDefault();
-  };
-
-  const toggleDateHandler = () => {
-    setToggleDate(true);
-  };
-
-  const populateDateHandler = (newDate) => {
-    setDate(newDate);
-  };
+  const dateRef = useRef(null);
 
   let formattedDate = '';
   let formattedTime = '';
@@ -37,6 +26,23 @@ const Menu = ({ toggleOff, changeToggle }) => {
       minute: "2-digit",
     });
   }
+
+  const contactSubmitHandler = (e) => {
+    e.preventDefault();
+    if(dateRef.current.value.length > 4){
+        disengageToggle(false);
+    }else{
+        
+    }
+  };
+
+  const toggleDateHandler = () => {
+    changeToggle();
+  };
+
+  const populateDateHandler = (newDate) => {
+    setDate(newDate);
+  };
 
   return (
     <div className={styles.menu}>
@@ -71,6 +77,7 @@ const Menu = ({ toggleOff, changeToggle }) => {
             value={`${formattedDate} - ${formattedTime}`}
             required
             readOnly
+            ref={dateRef}
           />
         </div>
         <div className={`${styles["menu__item"]} ${styles["menu__submit"]}`}>
@@ -82,7 +89,7 @@ const Menu = ({ toggleOff, changeToggle }) => {
         </div>
       </form>
 
-      <DatePicker toggleOff={toggleDate} passDate={populateDateHandler} />
+      <DatePicker toggleOff={isToggled} passDate={populateDateHandler} />
     </div>
   );
 };

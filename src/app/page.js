@@ -8,18 +8,17 @@ import Bubbles from "./components/bubbles";
 import Menu from "./components/Menu";
 
 export default function Home() {
-  const [toggleOff, setToggleOff] = useState(false);
+  const [isToggled, setIsToggled] = useState(false);
 
   const toggleOffHandler = () => {
-    setToggleOff(false);
+    setIsToggled(false);
   };
 
   const toggleHandler = () => {
-
-    if(!toggleOff){
-      setToggleOff(true)
+    if(!isToggled){
+      setIsToggled(true)
     }else{
-      setToggleOff(false)
+      setIsToggled(false)
     }
   }
 
@@ -27,9 +26,8 @@ export default function Home() {
     <main className={styles.main}>
       <Bubbles toggleOff={toggleOffHandler}></Bubbles>
       <div className={styles["content"]}>
-        <Menu toggled={toggleOff} changeToggle={toggleHandler} />
+        <Menu isToggled={isToggled} changeToggle={toggleHandler} disengageToggle={toggleOffHandler} />
       </div>
-      {/* <div className={styles["color-selector"]}></div> */}
     </main>
   );
 }

@@ -7,7 +7,7 @@
 }
 
 .container {
-  transition: all 1s;
+  transition: all .5s;
   max-height: 0;
   overflow: hidden;
   display: flex;
@@ -15,7 +15,7 @@
 }
 
 .display {
-  max-height: 300rem;
+  max-height: 50rem;
 }
 
 .time {
