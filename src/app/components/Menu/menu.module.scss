@@ -14,5 +14,44 @@
     height: 100%;
     border-radius: 1rem;
     background-color: white;
+    margin-bottom: 2rem;
+  }
+
+  &__item{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+
+    &__label{
+        color: rgb(82, 82, 82);
+        font-size: .7rem;
+        padding-bottom: 1rem;
+    }
+
+    &__text{
+        height: 2rem;
+        border-radius: .5rem;
+        padding: .5rem;
+        border: none;
+        box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.2);
+        transition: box-shadow .3s;
+        &:focus, &:active{
+            outline: none;
+            border: none;
+            box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.3);
+        }
+    }
+
+    &__submit{
+        height: 2rem;
+        padding: 1rem;
+        // background: linear-gradient(rgba($blue-lt, 0.5), rgba($blue-lt, 0));
+        margin-top: 2rem;
+
+        
+        border: none;
+        border-radius: 1rem;
+    }
   }
 }

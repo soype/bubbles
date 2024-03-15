@@ -1,22 +1,4 @@
-@import "../../styles/variables.scss";
-
-.calendar {
-  background-color: white;
-  padding: 1rem;
-  border: none;
-}
-
-.container {
-  transition: all 1s;
-  max-height: 0;
-  overflow: hidden;
-  display: flex;
-  border-radius: 1rem;
-}
-
-.display {
-  max-height: 300rem;
-}
+@import "../../../styles/variables.scss";
 
 .time {
   width: 100%;
@@ -65,5 +47,3 @@
     }
   }
 }
-
-

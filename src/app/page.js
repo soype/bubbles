@@ -12,14 +12,22 @@ export default function Home() {
 
   const toggleOffHandler = () => {
     setToggleOff(false);
-    console.log(toggleOff)
   };
+
+  const toggleHandler = () => {
+
+    if(!toggleOff){
+      setToggleOff(true)
+    }else{
+      setToggleOff(false)
+    }
+  }
 
   return (
     <main className={styles.main}>
       <Bubbles toggleOff={toggleOffHandler}></Bubbles>
       <div className={styles["content"]}>
-        <Menu toggled={toggleOff} />
+        <Menu toggled={toggleOff} changeToggle={toggleHandler} />
       </div>
       {/* <div className={styles["color-selector"]}></div> */}
     </main>

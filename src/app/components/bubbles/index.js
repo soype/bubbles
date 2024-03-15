@@ -28,7 +28,7 @@ const Bubbles = ({ toggleOff }) => {
 
   return (
     <div className={styles.container} onClick={calendarOffHandler}>
-      <h2>Let's schedule a call</h2>
+      <h2>Let's get in touch</h2>
       <div className={styles["bubble-container"]} id="bubbleContainer">
 
       <svg xmlns="http://www.w3.org/2000/svg">
