@@ -32,7 +32,7 @@ const Menu = ({ isToggled, changeToggle, disengageToggle }) => {
     if(dateRef.current.value.length > 4){
         disengageToggle(false);
     }else{
-        
+
     }
   };
 
@@ -71,7 +71,7 @@ const Menu = ({ isToggled, changeToggle, disengageToggle }) => {
             When?
           </label>
           <input
-            className={styles["menu__item__text"]}
+            className={styles["menu__item__date"]}
             type="textarea"
             onClick={toggleDateHandler}
             value={`${formattedDate} - ${formattedTime}`}
