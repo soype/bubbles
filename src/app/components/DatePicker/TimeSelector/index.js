@@ -1,11 +1,17 @@
 'use client'
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 import styles from './timeSelector.module.scss';
+import { userAgentFromString } from 'next/server';
 
 const TimeSelector = ({passTime}) => {
 
+  const [selectedTime, setSelectedTime] = useState(undefined);
+
+  useEffect(() => {
+    passTime(selectedTime)
+  }, [selectedTime])
 
     const timeSelectorHandler = (e) => {
 
@@ -18,7 +24,8 @@ const TimeSelector = ({passTime}) => {
 
         const time = e.target.innerHTML.substring(0, 5); 
 
-        passTime(time);
+        setSelectedTime(time);
+
       };
 
   return (

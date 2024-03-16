@@ -12,6 +12,9 @@
   margin: auto;
   transform-origin: center;
   width: 100%;
+  @media all and (max-width: 768px){
+    top: 30%;
+  }
 }
 
 .color-selector{

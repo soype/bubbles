@@ -15,6 +15,20 @@
     border-radius: 1rem;
     background-color: white;
     margin-bottom: 2rem;
+
+    @media all and (max-width: 1240px){
+        margin: 0 1rem;
+    }
+
+    @include breakpoint-mobile{
+        flex-direction: column;
+        margin: auto;
+        padding: 1rem;
+        gap: 1.5rem;
+        height: auto;
+        width: 80%;
+    }
+
   }
 
   &__item{
@@ -25,7 +39,7 @@
 
     &__label{
         color: rgb(82, 82, 82);
-        font-size: .7rem;
+        font-size: .8rem;
         padding-bottom: 1rem;
     }
 
@@ -73,6 +87,9 @@
         cursor: pointer;
         &:hover{
             background-color: $blue-lt;
+        }
+        @include breakpoint-mobile{
+            margin-top: 1rem;
         }
     }
   }

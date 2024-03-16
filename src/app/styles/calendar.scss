@@ -1,5 +1,4 @@
-$blue: rgb(18, 113, 255);
-$blue-lt: rgb(100, 220, 255);
+@import './variables.scss';
 
 .react-calendar {
   display: flex;
@@ -7,6 +6,10 @@ $blue-lt: rgb(100, 220, 255);
   gap: 1rem;
 
   width: 32rem;
+
+  @include breakpoint-mobile{
+    width: unset;
+  }
 
   button {
     border: none;
@@ -47,6 +50,12 @@ $blue-lt: rgb(100, 220, 255);
 
   &__month-view {
     gap: 1rem;
+
+
+    @include breakpoint-mobile{
+      gap: .5rem;
+    }
+
     &__weekdays {
       &__weekday {
         text-align: center;
@@ -59,6 +68,12 @@ $blue-lt: rgb(100, 220, 255);
         grid-template-columns: repeat(7, 1fr);
         gap: 1rem;
         width: 30rem;
+
+        @include breakpoint-mobile{
+          gap: .5rem;
+          width: auto;
+        }
+
         &__day{
             width: 100%;
             transition: all .2s;

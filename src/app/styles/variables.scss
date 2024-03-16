@@ -6,3 +6,9 @@ $purple-lt: rgb(221, 74, 255);
 $blue-lt: rgb(100, 220, 255);
 $red: rgb(200, 50, 50);
 $yellow: rgb(180, 180, 50);
+
+@mixin breakpoint-mobile{
+    @media all and (max-width: 860px){
+        @content;
+    }
+}
