@@ -8,7 +8,7 @@ import Bubbles from "./components/bubbles";
 import Menu from "./components/Menu";
 
 export default function Home() {
-  const [isToggled, setIsToggled] = useState(true);
+  const [isToggled, setIsToggled] = useState(false);
 
   const toggleOffHandler = () => {
     setIsToggled(false);
