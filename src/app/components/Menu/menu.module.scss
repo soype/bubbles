@@ -48,12 +48,12 @@
         border-radius: .5rem;
         padding: .5rem;
         border: none;
-        box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.2);
+        box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.3);
         transition: box-shadow .3s;
         &:focus, &:active{
             outline: none;
             border: none;
-            box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.3);
+            box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.4);
         }
     }
 
