@@ -1,30 +1,32 @@
-'use client'
+"use client";
 
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 import styles from "./page.module.scss";
 
 import Bubbles from "./components/bubbles";
+import Menu from "./components/Menu";
 
 export default function Home() {
+  const [isToggled, setIsToggled] = useState(true);
 
-  const [color, setColor] = useState('blue')
+  const toggleOffHandler = () => {
+    setIsToggled(false);
+  };
 
-  const colorSelectHandler = (e) => {
-    console.log(e.target.value)
+  const toggleHandler = () => {
+    if(!isToggled){
+      setIsToggled(true)
+    }else{
+      setIsToggled(false)
+    }
   }
 
   return (
     <main className={styles.main}>
-      <Bubbles color={color}></Bubbles>
-      <div className={styles['color-selector']}>
-        {/* <select id="colorSelect" onChange={colorSelectHandler}>
-          <option value="blue">Blue</option>
-          <option value="red">Red</option>
-          <option value="yellow">Yellow</option>
-          <option value="blue-lt">Light blue</option>
-          <option value="purple">Purple</option>
-        </select> */}
+      <Bubbles toggleOff={toggleOffHandler}></Bubbles>
+      <div className={styles["content"]}>
+        <Menu isToggled={isToggled} changeToggle={toggleHandler} disengageToggle={toggleOffHandler} />
       </div>
     </main>
   );

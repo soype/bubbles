@@ -1,0 +1,96 @@
+@import "../../styles/variables.scss";
+
+.menu {
+  max-width: $max-width;
+  height: 7rem;
+  width: 100%;
+  margin: auto;
+
+  &__container{
+    display: flex;
+    align-self: center;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    border-radius: 1rem;
+    background-color: white;
+    margin-bottom: 2rem;
+
+    @media all and (max-width: 1240px){
+        margin: 0 1rem;
+    }
+
+    @include breakpoint-mobile{
+        flex-direction: column;
+        margin: auto;
+        padding: 1rem;
+        gap: 1.5rem;
+        height: auto;
+        width: 80%;
+    }
+
+  }
+
+  &__item{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+
+    &__label{
+        color: rgb(82, 82, 82);
+        font-size: .8rem;
+        padding-bottom: 1rem;
+    }
+
+    &__text{
+        height: 2rem;
+        border-radius: .5rem;
+        padding: .5rem;
+        border: none;
+        box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.2);
+        transition: box-shadow .3s;
+        &:focus, &:active{
+            outline: none;
+            border: none;
+            box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.3);
+        }
+    }
+
+    &__date{
+        height: 2rem;
+        border-radius: .5rem;
+        padding: .5rem;
+        border: none;
+        box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.2);
+        transition: box-shadow .3s;
+        cursor: pointer;
+        &:focus, &:active{
+            outline: none;
+            border: none;
+            box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.3);
+        }
+    }
+
+    &__submit{
+        height: 2rem;
+        padding: 1rem;
+        margin-top: 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        border: none;
+        border-radius: 1rem;
+        background-color: $blue;
+        color: white;
+        transition: all .5s;
+        cursor: pointer;
+        &:hover{
+            background-color: $blue-lt;
+        }
+        @include breakpoint-mobile{
+            margin-top: 1rem;
+        }
+    }
+  }
+}

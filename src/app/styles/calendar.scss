@@ -1,0 +1,101 @@
+@import './variables.scss';
+
+.react-calendar {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  width: 32rem;
+
+  @include breakpoint-mobile{
+    width: unset;
+  }
+
+  button {
+    border: none;
+    background-color: none;
+    border-radius: 1rem;
+    height: 3rem;
+    width: auto;
+    cursor: pointer;
+  }
+
+  &__navigation {
+    text-align: center;
+
+    button {
+      background-color: unset;
+      transition: all 0.2s;
+      &:hover {
+        background-color: $blue;
+        color: white;
+      }
+    }
+
+    &__prev-button,
+    &__next-button {
+      padding: 1rem;
+      margin: 0 0.5rem;
+    }
+
+    &__prev2-button,
+    &__next2-button {
+      display: none;
+    }
+
+    &__label {
+      padding: 1rem;
+    }
+  }
+
+  &__month-view {
+    gap: 1rem;
+
+
+    @include breakpoint-mobile{
+      gap: .5rem;
+    }
+
+    &__weekdays {
+      &__weekday {
+        text-align: center;
+        margin-bottom: 0.5rem;
+      }
+    }
+
+    &__days{
+        display: grid !important;
+        grid-template-columns: repeat(7, 1fr);
+        gap: 1rem;
+        width: 30rem;
+
+        @include breakpoint-mobile{
+          gap: .5rem;
+          width: auto;
+        }
+
+        &__day{
+            width: 100%;
+            transition: all .2s;
+            background-color: rgb(248, 248, 248);
+            &:hover{
+                background-color: $blue-lt;
+            }
+            &:active{
+                background-color: $blue;
+            }
+        }
+    }
+  }
+  &__tile{
+    &--active{
+      background-color: $blue;
+      color: white;
+      transition: all .2s;
+      &:hover{
+        background-color: $blue;
+        color: yellow;
+      }
+    }
+  }
+}

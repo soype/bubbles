@@ -1,5 +1,6 @@
 import { Inter } from "next/font/google";
 import "./globals.scss";
+import "./styles/calendar.scss";
 
 const inter = Inter({ subsets: ["latin"] });
 
