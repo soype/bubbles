@@ -11,10 +11,19 @@
   max-height: 0;
   overflow: hidden;
   display: flex;
+  flex-direction: column;
   border-radius: 1rem;
 
   @media all and (max-width: 1240px){
     margin: 1rem 1rem;
+  }
+
+  @media all and (min-height: 700px) and (min-width: 800px){
+    position: absolute;
+    top: -100%;
+    margin: auto;
+    width: 80%;
+    left: 10%;
   }
 
   @include breakpoint-mobile{
@@ -24,6 +33,37 @@
     position: absolute;
     top: -100%;
     left: 10%;
+  }
+
+  &__row1{
+    display: flex;
+    @include breakpoint-mobile{
+      flex-direction: column;
+    }
+  }
+
+  &__row2{
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    background-color: white;
+
+    button{
+      background-color: $blue;
+      color: white;
+      padding: 1rem 1.5rem;
+      border: none;
+      border-radius: .5rem;
+      cursor: pointer;
+      transition: all .5s;
+      &:hover{
+        background-color: $blue-lt;
+      }
+      &:disabled{
+        background-color: $gray-lt;
+        color: black;
+      }
+    }
   }
 }
 

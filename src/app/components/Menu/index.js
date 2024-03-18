@@ -89,7 +89,7 @@ const Menu = ({ isToggled, changeToggle, disengageToggle }) => {
         </div>
       </form>
 
-      <DatePicker toggleOff={isToggled} passDate={populateDateHandler} />
+      <DatePicker toggleOff={isToggled} passDate={populateDateHandler} changeToggle={toggleDateHandler} />
     </div>
   );
 };
